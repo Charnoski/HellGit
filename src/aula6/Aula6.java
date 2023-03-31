@@ -1,31 +1,20 @@
 package aula6;
 
 import java.text.DateFormat;
-import java.text.NumberFormat;
+import java.util.Calendar;
 import java.util.Date;
-import java.util.Locale;
+import java.util.GregorianCalendar;
 
 public class Aula6 {
 	public static void main(String[] args) {
-		Locale.setDefault(new Locale("en", "US"));
 
-		DateFormat df1 = DateFormat.getDateInstance(DateFormat.SHORT);
-		DateFormat df2 = DateFormat.getDateInstance(DateFormat.MEDIUM);
-		DateFormat df3 = DateFormat.getDateInstance(DateFormat.LONG);
 		DateFormat df4 = DateFormat.getDateInstance(DateFormat.FULL);
 
 		Date data1 = new Date();
+		GregorianCalendar gc = new GregorianCalendar();
 
-		System.out.println("Data formato padrão = " + data1);
-
-		System.out.println("Data formato 1 = " + df1.format(data1));
-		System.out.println("Data formato 2 = " + df2.format(data1));
-		System.out.println("Data formato 3 = " + df3.format(data1));
-		System.out.println("Data formato 4 = " + df4.format(data1));
-
-		NumberFormat nf = NumberFormat.getCurrencyInstance();
-		String formatado = nf.format(100);
-		System.out.println(formatado);
+		System.out.println("hoje é " + df4.format(data1) + " e agora são " + gc.get(Calendar.HOUR_OF_DAY) + " horas e "
+				+ gc.get(Calendar.MINUTE) + " minutos.");
 
 	}
 }
